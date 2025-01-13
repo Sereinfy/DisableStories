@@ -36,12 +36,7 @@ public class EventListener implements IXposedHookLoadPackage {
                 param.setResult(false);
             }
         });
-        XposedHelpers.findAndHookMethod("org.telegram.ui.Stories.StoriesController", aparam.classLoader, "loadStories", new XC_MethodHook() {
-            @Override
-            protected void beforeHookedMethod(MethodHookParam param) {
-                param.setResult(null);
-            }
-        });
+        
         XposedHelpers.findAndHookMethod("org.telegram.ui.Stories.StoriesController", aparam.classLoader, "loadHiddenStories", new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) {
